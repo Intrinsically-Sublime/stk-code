@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=SuperTuxKart
+Exec=supertuxkart %u
+Icon=icon.png
+Type=Application
+X-Ubuntu-Touch=true
+Name[en_CA]=supertuxkart.desktop

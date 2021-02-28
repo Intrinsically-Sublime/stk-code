@@ -1,0 +1,15 @@
+{
+    "name": "supertuxkart",
+    "description": "SuperTuxKart for UBPorts!",
+    "architecture": "@CLICK_ARCH@",
+    "title": "supertuxkart",
+    "hooks": {
+        "supertuxkart": {
+             "apparmor": "supertuxkart.apparmor",
+             "desktop": "supertuxkart.desktop"
+        }
+    },
+    "version": "1.2.0-ubports",
+    "maintainer": "NO MAINTAINER <no_maintainer@anywhere.na>",
+    "framework": "ubuntu-sdk-16.04.4"
+}

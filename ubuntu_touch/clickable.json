@@ -1,0 +1,69 @@
+{
+  "clickable_minimum_required": "6.23.2",
+  "builder": "cmake",
+  "root_dir": "../../",
+  "src_dir": "${ROOT}/stk-code",
+  "build_dir": "build/${ARCH_TRIPLET}/app",
+  "kill": "supertuxkart",
+  "scripts": {
+       "echo": "export SUPERTUXKART_DATADIR=${SRC_DIR}/data",
+       "echo": "export PROJECT_VERSION=1",
+       "echo": "export SUPERTUXKART_VERSION=1.2",
+       "echo": "export AS_MAX_PORTABILITY"
+  },
+  "dependencies_target": [
+       "libsdl2-dev",
+       "libcurl4-openssl-dev",
+       "libenet-dev",
+       "libharfbuzz-dev",
+       "libfribidi-dev",
+       "libgles2-mesa-dev",
+       "libegl1-mesa-dev",
+       "libmirclient-dev",
+       "libxkbcommon-dev",
+       "libglib2.0-dev",
+       "libpulse-dev",
+       "libjpeg-dev",
+       "libogg-dev",
+       "libopenal-dev",
+       "libpng-dev",
+       "libssl-dev",
+       "libvorbis-dev",
+       "nettle-dev",
+       "zlib1g-dev",
+       "libbluetooth-dev",
+       "libfreetype6-dev",
+       "libbullet-dev",
+       "libc6-dev",
+       "libpthread-stubs0-dev"
+  ],
+  "dependencies_host": [
+       "build-essential",
+       "apt-utils",
+       "pkg-config",
+       "apt-utils",
+       "cmake-data"
+  ],
+  "image_setup": {
+      "run": [
+      ]
+  },
+  "install_data": {
+      "${SRC_DIR}/ubuntu_touch/manifest.json": "${INSTALL_DIR}",
+      "${SRC_DIR}/ubuntu_touch/supertuxkart.apparmor": "${INSTALL_DIR}",
+      "${SRC_DIR}/ubuntu_touch/supertuxkart.desktop": "${INSTALL_DIR}",
+      "${SRC_DIR}/ubuntu_touch/icon.png": "${INSTALL_DIR}"
+  },
+  "build_args": [
+      "-DCMAKE_BUILD_TYPE=Debug",
+      "-DPKG_CONFIG_EXECUTABLE=/usr/bin/pkg-config",
+      "-DSTK_ASSETS_DIR=${ROOT}/stk-assets",
+      "-DUSE_GLES2=ON",
+      "-DBUILD_RECORDER=OFF",
+      "-DCHECK_ASSETS=ON",
+      "-DUSE_SYSTEM_ANGELSCRIPT=OFF",
+      "-DUSE_WIIUSE=OFF",
+      "-DUSE_SQLITE3=OFF",
+      "-DCMAKE_POLICY_DEFAULT_CMP0048=OLD"
+  ]
+}

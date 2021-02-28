@@ -30,6 +30,7 @@ I have documented the current state for each build type below
 
 ### Clickable Arm64 build
 ______
+Issue https://github.com/Intrinsically-Sublime/stk-code/issues/4
 
 This one builds completely and creates a clickable. I tried installing it on my OnePlus 6T which is running a GSI from a few months ago. It is the only arm64 device I have and is not a stable device.
 
@@ -43,6 +44,8 @@ There may be more to the message but UT_tweak tools output window does not wrap 
 
 ### Clickable Armhf build
 ______
+Issue https://github.com/Intrinsically-Sublime/stk-code/issues/2
+
 Armhf builds all the object files and only fails at the last step creating the executable which fails at 
 ```
 Linking CXX executable bin/supertuxkart
@@ -62,6 +65,8 @@ and that means it is not detecting the architecture correctly?? It appears to be
 
 ### Clickable desktop build
 ______
+Issue https://github.com/Intrinsically-Sublime/stk-code/issues/3
+
 I can build all the object files and even build an executable but it fails at the very end with.
 ```
 Installing /home/Projects/stk/stk-code/ubuntu_touch/manifest.json

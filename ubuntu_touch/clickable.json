@@ -7,6 +7,8 @@
   "kill": "supertuxkart",
   "dependencies_target": [
        "libsdl2-dev",
+       "libsdl2-image-dev",
+       "libsdl2-mixer-dev",
        "libcurl4-openssl-dev",
        "libenet-dev",
        "libharfbuzz-dev",
@@ -23,6 +25,7 @@
        "libpng-dev",
        "libssl-dev",
        "libvorbis-dev",
+       "libvorbisfile3",
        "nettle-dev",
        "zlib1g-dev",
        "libbluetooth-dev",
@@ -48,12 +51,16 @@
       "${SRC_DIR}/ubuntu_touch/icon.png": "${INSTALL_DIR}"
   },
   "build_args": [
-      "-DCMAKE_BUILD_TYPE=Release",
       "-DPKG_CONFIG_EXECUTABLE=/usr/bin/pkg-config",
       "-DUSE_GLES2=ON",
       "-DBUILD_RECORDER=OFF",
+      "-DBUILD_SHARED_LIBS=ON",
       "-DUSE_WIIUSE=OFF",
       "-DUSE_SQLITE3=OFF",
       "-DCMAKE_POLICY_DEFAULT_CMP0048=OLD"
+  ],
+  "install_lib": [
+      "/usr/lib/${ARCH_TRIPLET}/libvorbisfile.so.3*",
+      "/usr/lib/${ARCH_TRIPLET}/libopenal.so.1*"
   ]
 }

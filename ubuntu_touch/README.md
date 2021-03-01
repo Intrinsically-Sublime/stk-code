@@ -39,7 +39,7 @@ I have documented the current state for each build type below
 ### Clickable Arm64 build
 ______
 
-Alpha release available in the release section
+Alpha release available in the release section. It is still missing local dependencies and without a working device I do not know which ones to add. See https://forums.ubports.com/post/47418 if you would like to help
 
 #### Install
 

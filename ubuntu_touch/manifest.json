@@ -11,5 +11,5 @@
     },
     "version": "1.2.0-ubports",
     "maintainer": "NO MAINTAINER <no_maintainer@anywhere.na>",
-    "framework": "ubuntu-sdk-16.04.4"
+    "framework": "ubuntu-sdk-16.04"
 }

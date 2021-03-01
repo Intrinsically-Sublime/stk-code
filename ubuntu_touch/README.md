@@ -11,18 +11,26 @@ In order to build SuperTuxKart from source, you'll need both the code and the as
 git clone https://github.com/Intrinsically-Sublime/stk-code stk-code
 svn co https://svn.code.sf.net/p/supertuxkart/code/stk-assets stk-assets
 ```
-To compile SuperTuxKart, run the following commands inside `stk-code/ubuntu_touch` directory
+To compile SuperTuxKart for Ubuntu Touch, run the following commands inside `stk-code/ubuntu_touch` directory
 ```
+# OPTIONAL: Reduce size of assets by over 500MB
+# This only has to be run one time before trying to build a clickable.
+generate_assets.sh
+# Move resulting /assets to root folder where the orginal /stk-assets folder resides
+# Rename or delete orginal /stk-assets folder
+# Rename new /assets to /stk-assets
+--------------------------------------
+
 # Desktop
 clickable desktop
 
 # Armhf
-clickable build --arch=armhf
+clickable build -a armhf
 
 # Arm64
-clickable build --arch=arm64
+clickable build -a arm64
 
-# You can also use clean-build or add --dirty to prevent cleaning
+# You can also use clean-build or add --dirty to prevent cleaning. See 'man clickable' for more options
 ```
 ## Current State
 ______
@@ -30,17 +38,15 @@ I have documented the current state for each build type below
 
 ### Clickable Arm64 build
 ______
-Issue https://github.com/Intrinsically-Sublime/stk-code/issues/4
 
-This one builds completely and creates a clickable. I tried installing it on my OnePlus 6T which is running a GSI from a few months ago. It is the only arm64 device I have and is not a stable device.
+Alpha release available in the release section
 
-I get
+#### Install
+
+Download clickable directly to the phone and open the download location in the terminal on the phone and run
 ```
-Fatal error: /home/phablet/Downloads/supertuxkart_1.2.0-ubports_arm64.click fail
-WARNING:root:signiture check failed, but installing anyway as requested
-Cannot install /home/phablet/Downloads/supertuxkart_1.2.0-ubports_arm64.click F
+sudo pkcon install-local ./supertuxkart_1.2.0-ubports_arm64.click --allow-untrusted
 ```
-There may be more to the message but UT_tweak tools output window does not wrap and has no side scroll I could find.
 
 ### Clickable Armhf build
 ______
